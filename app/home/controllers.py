@@ -8,15 +8,35 @@ mod = Blueprint('home', __name__, url_prefix='/home')
 @mod.route('/')
 def home():
     # message = "welcome home"
+    #
+    # firebase_base_url = current_app.config.get('FIREBASE_DB_CONN')
+    # firebase_add_recipe = current_app.config.get('FIREBASE_ADD_RECIPE_NODE')
+    # firebase_con = firebase.FirebaseApplication(firebase_base_url, None)
+    #
+    # # query the recipe
+    # recipe = firebase_con.get("/recipe/mutura", None)
+    #
+    # print recipe
 
-    firebase_base_url = current_app.config.get('FIREBASE_DB_CONN')
-    firebase_add_recipe = current_app.config.get('FIREBASE_ADD_RECIPE_NODE')
-    firebase_con = firebase.FirebaseApplication(firebase_base_url, None)
 
-    # query the recipe
-    recipe = firebase_con.get("/recipe/mutura", None)
+    return render_template('home/index.html')
 
-    print recipe
+@mod.route('/recipes')
+def recipes():
+    return render_template('home/recipes.html')
 
+@mod.route('/featured')
+def featured():
+    return render_template('home/featured.html')
 
-    return render_template('home/index.html', recipe=recipe)
+@mod.route('/videos')
+def videos():
+    return render_template('home/videos.html')
+
+@mod.route('/about')
+def about():
+    return render_template('home/about.html')
+
+@mod.route('/blog')
+def blog():
+    return render_template('home/blog.html')
