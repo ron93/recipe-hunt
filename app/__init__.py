@@ -1,14 +1,14 @@
-from flask import Flask, render_template
+from flask import Flask, render_template,app
 import admin,home
+
 
 from app.home.controllers import mod
 from app.admin.controllers import mod
 from app.site.controllers import mod
 
 app = Flask(__name__)
-
-
-
+# configurations
+app.config.from_object('config')
 
 
 
