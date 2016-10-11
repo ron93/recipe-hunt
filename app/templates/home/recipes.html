@@ -16,7 +16,9 @@
 		</form>
 	</div>
 	<div class="body">
+
 		<div>
+			<!--header-->
 			<div class="header">
 				<ul>
 					<li class="current">
@@ -39,12 +41,18 @@
 					</li>
 				</ul>
 			</div>
+
+			<!--body-->
+
 			<div class="body">
+
+				<!--content-->
 				<div id="content">
+
 					<div>
 						<ul>
 							<li>
-								<a href="index.html"><img src="images/fried-chicken.jpg" alt="Image"></a>
+								<a href="index.html"><img src="{{url_for('static',filename='images/fried-chicken.jpg')}}" alt="Image"></a>
 								<div>
 									<h3><a href="featured.html">This is just a place holder</a></h3>
 									<p>
@@ -53,7 +61,7 @@
 								</div>
 							</li>
 							<li>
-								<a href="index.html"><img src="images/pastries.jpg" alt="Image"></a>
+								<a href="index.html"><img src="{{url_for('static',filename='images/pastries.jpg')}}" alt="Image"></a>
 								<div>
 									<h3><a href="featured.html">This is just a place holder</a></h3>
 									<div>
@@ -78,7 +86,7 @@
 								</div>
 							</li>
 							<li>
-								<a href="index.html"><img src="images/cake.jpg" alt="Image"></a>
+								<a href="index.html"><img src="{{url_for('static',filename='images/cake.jpg')}}" alt="Image"></a>
 								<div>
 									<h3><a href="featured.html">This is just a place holder</a></h3>
 									<p>
@@ -87,7 +95,7 @@
 								</div>
 							</li>
 							<li>
-								<a href="index.html"><img src="images/strawberry-juice.jpg" alt="Image"></a>
+								<a href="index.html"><img src="{{url_for('static',filename='images/strawberry-juice.jpg')}}" alt="Image"></a>
 								<div>
 									<h3><a href="featured.html">This is just a place holder</a></h3>
 									<div>
@@ -112,7 +120,7 @@
 								</div>
 							</li>
 							<li>
-								<a href="index.html"><img src="images/rice-topping.jpg" alt="Image"></a>
+								<a href="index.html"><img src="{{url_for('static',filename='images/rice-topping.jpg')}}" alt="Image"></a>
 								<div>
 									<h3><a href="featured.html">This is just a place holder</a></h3>
 									<p>
@@ -122,34 +130,44 @@
 							</li>
 						</ul>
 					</div>
+
+
 				</div>
+
+
 			</div>
+
 		</div>
+
+
+		<!--recipes-->
+
+
 		<div>
 			<div>
 				<h3>Cooking Video</h3>
-				<a href="videos.html"><img src="images/cooking-video.png" alt="Image"></a>
+				<a href="videos.html"><img src="{{url_for('static',filename='images/cooking-video.png')}}" alt="Image"></a>
 				<span>Vegetable &amp; Rice Topping</span>
 			</div>
 			<div>
 				<h3>Featured Recipes</h3>
 				<ul id="featured">
 					<li>
-						<a href="recipes.html"><img src="images/sandwich.jpg" alt="Image"></a>
+						<a href="recipes.html"><img src="{{url_for('static',filename='images/sandwich.jpg')}}" alt="Image"></a>
 						<div>
 							<h2><a href="recipes.html">Ham Sandwich</a></h2>
 							<span>by: Anna</span>
 						</div>
 					</li>
 					<li>
-						<a href="recipes.html"><img src="images/biscuit-and-coffee.jpg" alt="Image"></a>
+						<a href="recipes.html"><img src="{{url_for('static',filename='images/biscuit-and-coffee.jpg')}}" alt="Image"></a>
 						<div>
 							<h2><a href="recipes.html">Biscuit &amp; Sandwich</a></h2>
 							<span>by: Sarah</span>
 						</div>
 					</li>
 					<li>
-						<a href="recipes.html"><img src="images/pizza.jpg" alt="Image"></a>
+						<a href="recipes.html"><img src="{{url_for('static',filename='images/pizza.jpg')}}" alt="Image"></a>
 						<div>
 							<h2><a href="recipes.html">Delicious Pizza</a></h2>
 							<span>by: Rico</span>
@@ -158,6 +176,8 @@
 				</ul>
 			</div>
 			<div>
+
+
 				<h3>Blog</h3>
 				<ul id="blog">
 					<li>
@@ -173,6 +193,8 @@
 						<span class="date">March 15, by Xaxan</span>
 					</li>
 				</ul>
+
+
 			</div>
 			<div>
 				<h3>Get Updates</h3>

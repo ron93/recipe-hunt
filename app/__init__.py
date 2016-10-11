@@ -12,6 +12,7 @@ app.config.from_object('config')
 
 
 
+
 # register blueprints
 
 # home page blueprint

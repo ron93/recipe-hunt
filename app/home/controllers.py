@@ -1,6 +1,14 @@
-from flask import Flask, Blueprint, render_template, current_app
+from flask import Flask, Blueprint, session,render_template, current_app
 from firebase import firebase
 import pprint
+from app.models import Base, engine
+from sqlalchemy.orm import sessionmaker
+
+# Create session and connect to DB
+Base.metadata.bind = engine
+DBSession = sessionmaker(bind=engine)
+db_session = DBSession()
+
 
 mod = Blueprint('home', __name__, url_prefix='/home')
 
