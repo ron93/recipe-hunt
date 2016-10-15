@@ -3,6 +3,9 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
 from sqlalchemy import create_engine
 
+from flask import Flask,app
+
+
 Base = declarative_base()
 
 class Recipe(Base):
@@ -14,8 +17,11 @@ class Recipe(Base):
     steps =Column(String,nullable=False)
 
 
-    def __init__(self,name):
+    def __init__(self,name,ingredients,steps):
         self.name=name
+        self.ingredients=ingredients
+        self.steps=steps
+
 
 
     def __repr__(self):
@@ -27,3 +33,5 @@ class Recipe(Base):
 # create db
 engine = create_engine('sqlite:///app.db')
 Base.metadata.create_all(engine)
+
+

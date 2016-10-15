@@ -1,42 +1,31 @@
-# DEBUG =True
-# # firebase
-#
-#
-# # Define the application directory
-# import os
-# BASE_DIR = os.path.abspath(os.path.dirname(__file__))
-#
-#
-# FIREBASE_DB_CONN = "https://recipe-hunt.firebaseio.com"
-# FIREBASE_ADD_RECIPE_NODE= "/recipe"
-# FIREBASE_KEY = ' AIzaSyDr_XiJ-V8Ech12M7Ta8GmrpgGQI187pZY'
-#
-#
-#
-# # Application threads. A common general assumption is
-# # using 2 per available processor cores - to handle
-# # incoming requests using one and performing background
-# # operations using the other.
-# THREADS_PER_PAGE = 2
-#
-# # Enable protection agains *Cross-site Request Forgery (CSRF)*
-# CSRF_ENABLED = True
-#
-# # Use a secure, unique and absolutely secret key for
-# # signing the data.
-# CSRF_SESSION_KEY = "secret"
-#
-# # Secret key for signing cookies
-# SECRET_KEY = "secret"
+DEBUG =True
+# firebase
 
+
+# Define the application directory
 import os
-basedir = os.path.abspath(os.path.dirname(__file__))
+BASE_DIR = os.path.abspath(os.path.dirname(__file__))
 
-class Config(object):
-    DEBUG = True
-    CSRF_ENABLED = True
-    SECRET_KEY = 'this-really-needs-to-be-changed'
-    SQLALCHEMY_DATABASE_URI = os.environ['DATABASE_URL']
 
-    # export
-    # DATABASE_URL = "postgresql://localhost/recipehunt"
+FIREBASE_DB_CONN = "https://recipe-hunt.firebaseio.com"
+FIREBASE_ADD_RECIPE_NODE= "/recipe"
+FIREBASE_KEY = ' AIzaSyDr_XiJ-V8Ech12M7Ta8GmrpgGQI187pZY'
+
+
+
+# Application threads. A common general assumption is
+# using 2 per available processor cores - to handle
+# incoming requests using one and performing background
+# operations using the other.
+THREADS_PER_PAGE = 2
+
+# Enable protection agains *Cross-site Request Forgery (CSRF)*
+CSRF_ENABLED = True
+
+# Use a secure, unique and absolutely secret key for
+# signing the data.
+CSRF_SESSION_KEY = "secret"
+
+# Secret key for signing cookies
+SECRET_KEY = "secret"
+
