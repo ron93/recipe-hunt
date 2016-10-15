@@ -609,3 +609,8 @@ div.footer div p {
 	line-height: 70px;
 	text-align: center;
 }
+
+textarea{
+height: 300px;
+width: 90%;
+}

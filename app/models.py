@@ -1,4 +1,4 @@
-from sqlalchemy import Column, String, ForeignKey, Integer, Float, DateTime, func, SmallInteger
+from sqlalchemy import Column, String, ForeignKey, Integer,TEXT
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
 from sqlalchemy import create_engine
@@ -13,8 +13,8 @@ class Recipe(Base):
 
     id = Column(Integer,primary_key=True)
     name = Column(String,nullable=False)
-    ingredients = Column(String,nullable=False)
-    steps =Column(String,nullable=False)
+    ingredients = Column(TEXT,nullable=False)
+    steps =Column(TEXT,nullable=False)
 
 
     def __init__(self,name,ingredients,steps):
