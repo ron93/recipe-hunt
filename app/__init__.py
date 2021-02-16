@@ -3,10 +3,12 @@ from flask_sqlalchemy import SQLAlchemy
 import os
 from config import Config
 from flask_migrate import Migrate
+from flasl_login import LoginManager
 from app import auth , main
 
 db = SQLAlchemy()
 migrate = Migrate()
+login = LoginManager()
 
 
 def create_app(config=Config):
@@ -18,6 +20,7 @@ def create_app(config=Config):
     with app.app_context():
         db.create_all()
     migrate.init_app(app, db)
+    login(app)
     from app import models
 
 
