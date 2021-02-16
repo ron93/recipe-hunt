@@ -21,6 +21,10 @@ def create_app(config=Config):
         db.create_all()
     migrate.init_app(app, db)
     login(app)
+    # require login to view restricted resources
+    login.login_view = 'login'
+
+
     from app import models
 
 
