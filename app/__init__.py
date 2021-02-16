@@ -1,8 +1,9 @@
-from flask import Flask, current_app, request
+from flask import Flask, current_app, request,Blueprint
 from flask_sqlalchemy import SQLAlchemy
 import os
 from config import Config
 from flask_migrate import Migrate
+from app.auth import auth_bp
 
 db = SQLAlchemy()
 migrate = Migrate()
@@ -16,13 +17,7 @@ def create_app(config=Config):
     db.init_app(app)
     migrate.init_app(app, db)
 
-    @app.route('/')
-    def hello():
-        return "Hello World!"
+    app.register_blueprint(auth_bp)
 
-
-    @app.route('/<name>')
-    def hello_name(name):
-        return "Hello {}!".format(name)
 
     return app
