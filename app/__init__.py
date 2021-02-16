@@ -1,9 +1,9 @@
-from flask import Flask, current_app, request,Blueprint
+from flask import Flask, current_app, request,Blueprint, render_template
 from flask_sqlalchemy import SQLAlchemy
 import os
 from config import Config
 from flask_migrate import Migrate
-from app.auth import auth_bp
+from app import auth , main
 
 db = SQLAlchemy()
 migrate = Migrate()
@@ -17,7 +17,10 @@ def create_app(config=Config):
     db.init_app(app)
     migrate.init_app(app, db)
 
-    app.register_blueprint(auth_bp)
+
+    app.register_blueprint(main.main_bp)
+
+    app.register_blueprint(auth.auth_bp)
 
 
     return app
