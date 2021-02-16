@@ -1,4 +1,4 @@
-from app.main import main_bp
+from app.main import main_bp 
 from flask import render_template
 
 @main_bp.route('/')
