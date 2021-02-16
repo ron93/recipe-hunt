@@ -15,6 +15,8 @@ def create_app(config=Config):
 
     app.config.from_object(os.environ['APP_SETTINGS'])
     db.init_app(app)
+    with app.app_context():
+        db.create_all()
     migrate.init_app(app, db)
     from app import models
 
