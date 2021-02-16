@@ -16,6 +16,7 @@ def create_app(config=Config):
     app.config.from_object(os.environ['APP_SETTINGS'])
     db.init_app(app)
     migrate.init_app(app, db)
+    from app import models
 
 
     app.register_blueprint(main.main_bp)
