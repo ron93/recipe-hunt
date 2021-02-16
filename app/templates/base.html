@@ -11,10 +11,19 @@
 
 <div>
   Recipe Hunt:
-  <a href="/">Home</a>
-  <a href="/login">Login</a>
+  <a href="{{ url_for('main_bp.index') }}">Home</a>
+  <a href="{{ url_for('auth_bp.login') }}">Login</a>
 </div>
-        <hr>
+<hr>
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+<ul>
+    {% for message in messages %}
+    <li>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+{% endwith %}
         {% block content %}{% endblock %}
     </body>
 </html>
