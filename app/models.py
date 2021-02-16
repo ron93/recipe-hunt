@@ -3,6 +3,7 @@ from sqlalchemy.dialects.postgresql import JSON
 from datetime import datetime
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin
+from app import login
 
 class User(UserMixin, db.Model):
     __tablename__ = 'users'
@@ -24,7 +25,7 @@ class User(UserMixin, db.Model):
 
     @login.user_loader
     def load_user(id):
-    return User.query.get(int(id))
+        return User.query.get(int(id))
 
         
 class Recipe(db.Model):

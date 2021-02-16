@@ -6,7 +6,6 @@ from flask_login import login_required
 @main_bp.route('/')
 @login_required
 def index():
-    user = {'username': 'Ron'}
     recipes = [
             {'author':{'username': 'James'},
                     'name':'Tea',
@@ -24,5 +23,5 @@ def index():
             'steps':{1:'Add butter to pan, let it melt at low heat',2:'put slice of bread',3:'Turn after 3 mins',4:'serve while hot'}
             }
         ]
-    return render_template('main/index.html',title='Home', user=user,recipes=recipes)
+    return render_template('main/index.html',title='Home',recipes=recipes)
     
