@@ -13,6 +13,9 @@
   Recipe Hunt:
   <a href="{{ url_for('main_bp.index') }}">Home</a>
   <a href="{{ url_for('auth_bp.login') }}">Login</a>
+  {% else %}
+        <a href="{{ url_for('logout') }}">Logout</a>
+        {% endif %}
 </div>
 <hr>
 {% with messages = get_flashed_messages() %}
