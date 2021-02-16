@@ -18,6 +18,11 @@ def login():
         return redirect(url_for('main_bp.index'))
     return render_template('auth/login.html',title='Sign in',form=form)
 
+@app.route('/logout')
+def logout():
+    logout_user()
+    return redirect(url_for('main_bp.index'))
+
 @auth_bp.route('/register', methods=['GET', 'POST'])
 def register():
     pass
