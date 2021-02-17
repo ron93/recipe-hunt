@@ -1,14 +1,16 @@
 from flask import Flask, current_app, request,Blueprint, render_template
-from flask_sqlalchemy import SQLAlchemy
 import os
 from config import Config
 from flask_migrate import Migrate
-from flasl_login import LoginManager
-from app import auth , main
+from flask_login import LoginManager
+from flask_sqlalchemy import SQLAlchemy
 
 db = SQLAlchemy()
+
 migrate = Migrate()
 login = LoginManager()
+login.login_view = 'login'
+
 
 
 def create_app(config=Config):
@@ -20,13 +22,13 @@ def create_app(config=Config):
     with app.app_context():
         db.create_all()
     migrate.init_app(app, db)
-    login(app)
+    login.init_app(app)
+
     # require login to view restricted resources
-    login.login_view = 'login'
 
 
-    from app import models
 
+    from app import auth , main
 
     app.register_blueprint(main.main_bp)
 
@@ -34,3 +36,4 @@ def create_app(config=Config):
 
 
     return app
+from app import models

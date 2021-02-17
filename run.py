@@ -1,10 +1,10 @@
-from app import create_app,db,User,Recipe
+from app import create_app
 
 app = create_app()
 
 @app.shell_context_processor
 def make_shell_context():
-    return {'db': db,'User': User, 'Recipe': Recipe}
+    return {'db': db}
     
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
