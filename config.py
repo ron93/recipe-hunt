@@ -3,10 +3,10 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 
 
 class Config(object):
-    DEBUG = False
+    DEBUG = True
     TESTING = False
     CSRF_ENABLED = True
-    SECRET_KEY = 'this-really-needs-to-be-changed'
+    SECRET_KEY = 'rfgdDr8989234hf4Dj6bb4YG'
     SQLALCHEMY_DATABASE_URI = os.environ['DATABASE_URL']
 
 

@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>User: {{ user.username }}</h1>
+    <hr>
+    {% for post in posts %}
+    <p>
+    {{ recipes.author.username }} Recipe posted:
+     <b>{{ recipes.name }}</b>
+     <b>{{ recipes.ingredients }}</b>
+     <b>{{ recipes.steps }}</b>
+    </p>
+    {% endfor %}
+{% endblock %}
