@@ -1,10 +1,12 @@
 from app.main import main_bp 
 from flask import render_template
-from flask_login import login_required
+from flask_login import login_required,current_user
+from app.models import User
 
 
-@main_bp.route('/')
-@main_bp.route('/index')
+@main_bp.route('/', methods=['GET'])
+@main_bp.route('/index', methods=['GET'])
+#@login_required
 def index():
     recipes = [
             {'author':{'username': 'James'},
@@ -14,7 +16,7 @@ def index():
             },
               {'author':{'username': 'Mary'},
             'name':'Uji',
-            'ingredients':{1:'Hot water',2:'flour',2:'Sugar'},
+            'ingredients':{1:'Hot water',2:'flour',3:'Sugar'},
             'steps':{1:'Boil  water on stove',2:'stir as you add four',3:'Add sugar'}
             },
                {'author':{'username': 'James'},
@@ -29,7 +31,7 @@ def index():
 @login_required
 def user(username):
     #first_or_404 -> returns first result or 404 error if non is found
-    user = user.query.filter_by(username=username).first_or_404()
+    user = User.query.filter_by(username=username).first_or_404()
     
     recipes = [
       
