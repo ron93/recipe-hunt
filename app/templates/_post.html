@@ -1,0 +1,34 @@
+    <table class="table table-hover">
+        <tr>
+            <td width="70px">
+                <a href="{{ url_for('main.user', username=recipe.author.username) }}">
+                    <img src="{{ recipe.author.avatar(70) }}" />
+                </a>
+            </td>
+            <td>
+                {% set user_link %}
+                    <span class="user_popup">
+                        <a href="{{ url_for('main.user', username=recipe.author.username) }}">
+                            {{ recipe.author.username }}
+                        </a>
+                    </span>
+                {% endset %}
+                {{ _('%(username)s said %(when)s',
+                    username=user_link, when=moment(recipe.timestamp).fromNow()) }}
+                <br>
+                <span id="recipe{{ recipe.id }}">{{ recipe.name }}</span>
+                <p> {{ recipe.ingredients }} </p>
+                <p> {{ recipe.steps }} </p>
+                {% if recipe.language and recipe.language != g.locale %}
+                <br><br>
+                <span id="translation{{ recipe.id }}">
+                    <a href="javascript:translate(
+                                '#recipe{{ recipe.id }}',
+                                '#translation{{ recipe.id }}',
+                                '{{ recipe.language }}',
+                                '{{ g.locale }}');">{{ _('Translate') }}</a>
+                </span>
+                {% endif %}
+            </td>
+        </tr>
+    </table>
